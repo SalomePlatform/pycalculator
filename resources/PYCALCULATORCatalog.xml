@@ -1,0 +1,138 @@
+<?xml version='1.0' encoding='us-ascii' ?>
+ 
+<!-- XML component catalog -->
+<begin-catalog>
+
+<!-- Path prefix information -->
+
+<path-prefix-list>
+</path-prefix-list>
+
+<!-- Component list -->
+<component-list>
+	<component>
+		<!-- Component identification -->
+		<component-name>PYCALCULATOR</component-name>
+		<component-type>SOLVER</component-type>
+		<component-author>LD</component-author>
+		<component-version> 1.0</component-version>
+		<component-comment>Test component (Arithmetic operations with MED_Field) - SALOME component </component-comment>
+		<component-multistudy>0</component-multistudy>
+		<constraint>hostname = localhost</constraint>
+
+		<component-interface-list>
+			<component-interface-name>PYCALCULATOR</component-interface-name>
+			<component-interface-comment>No comment</component-interface-comment>
+
+			<component-service-list>
+				<component-service>
+					<!-- service-identification -->
+					<service-name>Mul</service-name>
+					<service-author>LD</service-author>
+					<service-version>1.0</service-version>
+					<service-comment>Multiplication of 2 fields of double</service-comment>
+					<service-by-default>1</service-by-default>
+					<!-- service-connexion -->
+					<inParameter-list>
+						<inParameter>
+							<inParameter-type>FIELDDOUBLE</inParameter-type>
+							<inParameter-name>field1</inParameter-name>
+							<inParameter-comment>initial field of double</inParameter-comment>
+						</inParameter>
+						<inParameter>
+							<inParameter-type>double</inParameter-type>
+							<inParameter-name>x1</inParameter-name>
+							<inParameter-comment>multiplicator</inParameter-comment>
+						</inParameter>
+					</inParameter-list>
+                                        <outParameter-list>
+                                                 <outParameter>
+                                                        <outParameter-type>FIELDDOUBLE</outParameter-type>
+                                                        <outParameter-name>field2</outParameter-name>
+                                                        <outParameter-comment>result</outParameter-comment>
+                                                 </outParameter>
+                                        </outParameter-list>
+				</component-service>
+				<component-service>
+					<!-- service-identification -->
+					<service-name>Add</service-name>
+					<service-author>LD</service-author>
+					<service-version>1.0</service-version>
+					<service-comment>Addition of 2 fields of double</service-comment>
+					<service-by-default>1</service-by-default>
+					<!-- service-connexion -->
+					<inParameter-list>
+						<inParameter>
+							<inParameter-type>FIELDDOUBLE</inParameter-type>
+							<inParameter-name>field1</inParameter-name>
+							<inParameter-comment>first field of double</inParameter-comment>
+						</inParameter>
+						<inParameter>
+							<inParameter-type>FIELDDOUBLE</inParameter-type>
+							<inParameter-name>field2</inParameter-name>
+							<inParameter-comment>second field of double</inParameter-comment>
+						</inParameter>
+					</inParameter-list>
+                                        <outParameter-list>
+                                                 <outParameter>
+                                                        <outParameter-type>FIELDDOUBLE</outParameter-type>
+                                                        <outParameter-name>field3</outParameter-name>
+                                                        <outParameter-comment>result</outParameter-comment>
+                                                 </outParameter>
+                                        </outParameter-list>
+				</component-service>
+				<component-service>
+					<!-- service-identification -->
+					<service-name>Constant</service-name>
+					<service-author>LD</service-author>
+					<service-version>1.0</service-version>
+					<service-comment>Build a constant field of doubles</service-comment>
+					<service-by-default>1</service-by-default>
+					<!-- service-connexion -->
+					<inParameter-list>
+						<inParameter>
+							<inParameter-type>FIELDDOUBLE</inParameter-type>
+							<inParameter-name>field1</inParameter-name>
+							<inParameter-comment>allows to build the support</inParameter-comment>
+						</inParameter>
+						<inParameter>
+							<inParameter-type>double</inParameter-type>
+							<inParameter-name>x1</inParameter-name>
+							<inParameter-comment>the constant</inParameter-comment>
+						</inParameter>
+					</inParameter-list>
+                                        <outParameter-list>
+                                                 <outParameter>
+                                                        <outParameter-type>FIELDDOUBLE</outParameter-type>
+                                                        <outParameter-name>field2</outParameter-name>
+                                                        <outParameter-comment>result based on first field support</outParameter-comment>
+                                                 </outParameter>
+                                        </outParameter-list>
+				</component-service>
+				<component-service>
+					<!-- service-identification -->
+					<service-name>writeMEDfile</service-name>
+					<service-author>LD</service-author>
+					<service-version>1.0</service-version>
+					<service-comment>write a field in a Med file</service-comment>
+					<service-by-default>1</service-by-default>
+					<!-- service-connexion -->
+					<inParameter-list>
+						<inParameter>
+							<inParameter-type>FIELDDOUBLE</inParameter-type>
+							<inParameter-name>field1</inParameter-name>
+							<inParameter-comment>transient Med field</inParameter-comment>
+						</inParameter>
+						<inParameter>
+							<inParameter-type>string</inParameter-type>
+							<inParameter-name>filename</inParameter-name>
+							<inParameter-comment>Med filename</inParameter-comment>
+						</inParameter>
+					</inParameter-list>
+				</component-service>
+			</component-service-list>
+		</component-interface-list>
+
+        </component>
+</component-list>
+</begin-catalog>

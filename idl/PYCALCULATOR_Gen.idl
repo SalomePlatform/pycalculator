@@ -1,0 +1,31 @@
+//=============================================================================
+// File      : Calculator.idl
+// Created   : jeu nov 08 12:08:17 CEST 2001
+// Author    : Laurent DADA CEA
+// Project   : SALOME
+// $Header$
+//=============================================================================
+
+#ifndef PYCALCULATOR_IDL
+#define PYCALCULATOR_IDL
+
+#include "SALOME_Component.idl"
+#include "MED.idl"
+
+
+module PYCALCULATOR_ORB {
+
+interface PYCALCULATOR_Gen : Engines::Component
+{
+
+  SALOME_MED::FIELDDOUBLE Add(in SALOME_MED::FIELDDOUBLE field1, in SALOME_MED::FIELDDOUBLE field2);
+  SALOME_MED::FIELDDOUBLE Mul(in SALOME_MED::FIELDDOUBLE field1, in double x1);
+  SALOME_MED::FIELDDOUBLE Constant(in SALOME_MED::FIELDDOUBLE field1, in double x1);
+  void writeMEDfile(in SALOME_MED::FIELDDOUBLE field1, in string fileName);
+
+};
+};
+
+
+
+#endif
