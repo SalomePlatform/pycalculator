@@ -16,7 +16,7 @@
 		<component-username>PyCalculator</component-username>
 		<component-type>SOLVER</component-type>
 		<component-author>LD</component-author>
-		<component-version> 1.0</component-version>
+		<component-version>2.1.0</component-version>
 		<component-comment>Test component (Arithmetic operations with MED_Field) - SALOME component </component-comment>
 		<component-multistudy>0</component-multistudy>
 		<constraint>hostname = localhost</constraint>
