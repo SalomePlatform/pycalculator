@@ -13,6 +13,7 @@
 	<component>
 		<!-- Component identification -->
 		<component-name>PYCALCULATOR</component-name>
+		<component-username>PyCalculator</component-username>
 		<component-type>SOLVER</component-type>
 		<component-author>LD</component-author>
 		<component-version> 1.0</component-version>
