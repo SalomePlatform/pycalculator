@@ -17,7 +17,9 @@ VPATH=.:@srcdir@:@top_srcdir@/bin:@top_srcdir@/resources:./bin:@top_srcdir@/idl:
 SUBDIRS = idl src
 
 RESOURCES_FILES = \
-PYCALCULATORCatalog.xml
+PYCALCULATORCatalog.xml\
+PYCALCULATOR.png\
+PYCALCULATOR_en.xml
 
 BIN_SCRIPT= \
 VERSION

@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='us-ascii'?>
+<!DOCTYPE application PUBLIC "" "desktop.dtd">
+
+<!--  GUI customization for PYCALCULATOR component  -->
+
+<application
+	title="PYCALCULATOR component"
+	date="13/05/2002"
+	author="Nicolas REJNERI"
+	appId="PYCALCULATOR for Salome" >
+
+<desktop>
+</desktop>	
+
+</application>
