@@ -4,6 +4,7 @@ import SALOME_ComponentPy
 import SALOME_MED
 from libMEDMEM_Swig import *
 from libMedCorba_Swig import *
+from libMEDClient import *
 
 class PYCALCULATOR (PYCALCULATOR_ORB__POA.PYCALCULATOR_Gen, SALOME_ComponentPy.SALOME_ComponentPy_i ):
 
@@ -14,6 +15,7 @@ class PYCALCULATOR (PYCALCULATOR_ORB__POA.PYCALCULATOR_Gen, SALOME_ComponentPy.S
         SALOME_ComponentPy.SALOME_ComponentPy_i.__init__(self, orb, poa, 
 	       contID, containerName, instanceName, interfaceName, notif)
 	self._naming_service=SALOME_ComponentPy.SALOME_NamingServicePy_i(self._orb)
+        self.clients = []
         print "End of PYCALCULATOR::__init__" 
 
     def Add(self, field1, field2):
@@ -108,6 +110,10 @@ class PYCALCULATOR (PYCALCULATOR_ORB__POA.PYCALCULATOR_Gen, SALOME_ComponentPy.S
             fieldOutLocal.setComponentName(kp1,compName[k])
             fieldOutLocal.setMEDComponentUnit(kp1,compUnit[k])
 
+        supportClient = SUPPORTClient(support1)
+        self.clients.append( supportClient )
+        fieldOutLocal.setSupport( supportClient )
+
         print "CALCULATORPY::Add : Creation of the CORBA field"
 
         fieldOutCorba = createCorbaFieldDouble(support1,fieldOutLocal)
@@ -158,6 +164,10 @@ class PYCALCULATOR (PYCALCULATOR_ORB__POA.PYCALCULATOR_Gen, SALOME_ComponentPy.S
             fieldOutLocal.setComponentName(kp1,compName[k])
             fieldOutLocal.setMEDComponentUnit(kp1,compUnit[k])
 
+        supportClient = SUPPORTClient(support)
+        self.clients.append( supportClient )
+        fieldOutLocal.setSupport( supportClient )
+
         print "CALCULATORPY::Mul : Creation of the CORBA field"
 
         fieldOutCorba = createCorbaFieldDouble(support,fieldOutLocal)
@@ -203,6 +213,10 @@ class PYCALCULATOR (PYCALCULATOR_ORB__POA.PYCALCULATOR_Gen, SALOME_ComponentPy.S
             kp1 = k + 1
             fieldOutLocal.setComponentName(kp1,compName[k])
             fieldOutLocal.setMEDComponentUnit(kp1,compUnit[k])
+
+        supportClient = SUPPORTClient(support)
+        self.clients.append( supportClient )
+        fieldOutLocal.setSupport( supportClient )
 
         print "CALCULATORPY::Constant : Creation of the CORBA field"
 
