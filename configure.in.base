@@ -225,14 +225,14 @@ echo
 
 CHECK_HDF5
 
-echo
-echo ---------------------------------------------
-echo testing MED2
-echo ---------------------------------------------
-echo
-
-CHECK_MED2
-
+#echo
+#echo ---------------------------------------------
+#echo testing MED2 - or MED module?
+#echo ---------------------------------------------
+#echo
+#
+#CHECK_MED2
+#
 echo
 echo ---------------------------------------------
 echo Testing OpenCascade
