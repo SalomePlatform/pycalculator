@@ -33,12 +33,13 @@ distclean: clean
 
 install:
 	$(MAKE) docs
-	(cd tui && $(MAKE) install);
-	(cd gui && $(MAKE) install);
-	cp -f SUPERV_index.html $(docdir)
+	@@SETX@; for d in $(SUBDIRS); do 	\
+	   (cd $$d && $(MAKE) $@) || exit 1; 	\
+	done; \
+	cp -f PYCALCULATOR_index.html $(docdir)
 
 uninstall:
 	@@SETX@; for d in $(SUBDIRS); do 	\
 	   (cd $$d && $(MAKE) $@) || exit 1; 	\
 	done; \
-	rm -fr $(docdir)/SUPERV_index.html
+	rm -fr $(docdir)/PYCALCULATOR_index.html

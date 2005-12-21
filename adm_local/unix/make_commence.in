@@ -50,67 +50,10 @@ PYTHON_VERSION = @PYTHON_VERSION@
 PYTHON_SITE = @PYTHON_SITE@
 PYTHON_SITE_INSTALL = @PYTHON_SITE_INSTALL@
 
-# QT
-
-QT_ROOT = @QT_ROOT@
-QT_INCLUDES = @QT_INCLUDES@
-QT_MT_INCLUDES = @QT_INCLUDES@ -DQT_THREAD_SUPPORT
-QT_LIBS = @QT_LIBS@
-QT_MT_LIBS = @QT_MT_LIBS@
-
-MOC = @MOC@
-UIC = @UIC@
-
-
-#QWT
-
-QWT_INCLUDES=@QWT_INCLUDES@
-QWT_LIBS=@QWT_LIBS@
-
-# SIP
-SIP = @SIP@
-SIP_INCLUDES = @SIP_INCLUDES@
-SIP_LIBS = @SIP_LIBS@
-
-# PYQT
-PYQT_SIPS = @PYQT_SIPS@
-PYQT_LIBS = @PYQT_LIBS@
-
-# openGL
-OGL_INCLUDES=@OGL_INCLUDES@
-OGL_LIBS=@OGL_LIBS@
-
-# VTK
-VTK_INCLUDES=@VTK_INCLUDES@
-VTK_LIBS=@VTK_LIBS@
-
-# HDF5
-
-HDF5_INCLUDES=@HDF5_INCLUDES@
-HDF5_LIBS=@HDF5_LIBS@
-HDF5_MT_LIBS=@HDF5_MT_LIBS@
-
-# OpenCasCade
-
-OCC_INCLUDES=@CAS_CPPFLAGS@
-OCC_CXXFLAGS=@CAS_CXXFLAGS@
-
-OCC_KERNEL_LIBS=@CAS_KERNEL@
-OCC_OCAF_LIBS=@CAS_OCAF@
-OCC_VIEWER_LIBS=@CAS_VIEWER@
-OCC_MODELER_LIBS=@CAS_MODELER@
-OCC_DATAEXCHANGE_LIBS=@CAS_DATAEXCHANGE@
-OCC_LIBS=@CAS_LDFLAGS@
-
 # MPICH
 
 MPICH_INCLUDES=@MPICH_INCLUDES@
 MPICH_LIBS=@MPICH_LIBS@
-
-# Swig C++ Python
-
-SWIG       = @SWIG@
-SWIG_FLAGS = @SWIG_FLAGS@ -I$(inc_builddir) -I$(srcdir) -I.
 
 # OMNIORB
 
@@ -230,13 +173,14 @@ $(top_srcdir)/configure.in: $(top_srcdir)/configure.in.base
 
 
 ACLOCAL_SRC = \
-ac_cxx_bool.m4                    check_corba.m4     check_vtk.m4	\
-ac_cxx_depend_flag.m4             check_hdf5.m4      enable_pthreads.m4	\
-ac_cxx_mutable.m4                 check_mico.m4      libtool.m4		\
-ac_cxx_namespaces.m4              check_omniorb.m4   pyembed.m4		\
-ac_cxx_partial_specialization.m4  check_opengl.m4    python.m4		\
-ac_cxx_typename.m4                check_pthreads.m4  check_cas.m4	\
-ac_cc_warnings.m4                 check_qt.m4        check_swig.m4 
+ac_cxx_bool.m4				check_corba.m4		\
+ac_cxx_depend_flag.m4			enable_pthreads.m4	\
+ac_cxx_mutable.m4			check_mico.m4		\
+libtool.m4				ac_cxx_namespaces.m4	\
+check_omniorb.m4			pyembed.m4		\
+ac_cxx_partial_specialization.m4	ac_cxx_typename.m4	\
+check_pthreads.m4			ac_cc_warnings.m4	\
+python.m4
 
 $(top_srcdir)/aclocal.m4: $(ACLOCAL_SRC:%=@KERNEL_ROOT_DIR@/salome_adm/unix/config_files/%)
 	cd $(top_srcdir) ; aclocal --acdir=adm_local/unix/config_files -I @KERNEL_ROOT_DIR@/salome_adm/unix/config_files
