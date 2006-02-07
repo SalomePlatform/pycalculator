@@ -20,6 +20,7 @@
 		<component-comment>Test component (Arithmetic operations with MED_Field)</component-comment>
 		<component-multistudy>0</component-multistudy>
 		<constraint>hostname = localhost</constraint>
+		<component-impltype>0</component-impltype>
 
 		<component-interface-list>
 			<component-interface-name>PYCALCULATOR</component-interface-name>
