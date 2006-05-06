@@ -127,7 +127,7 @@ echo "	./salome_adm/unix/F77config.h \\" >> configure.in_tmp1
 echo "	./salome_adm/unix/sstream \\" >> configure.in_tmp1
 
 echo "	./salome_adm/unix/depend \\" >> configure.in_tmp1
-echo "	./adm_local/unix/make_omniorb \\" >> configure.in_tmp1
+echo "	./adm_local/unix/make_omniorb:${ABS_CONF_DIR}/adm_local/unix/make_omniorb.in \\" >> configure.in_tmp1
 echo "	./salome_adm/unix/envScript \\" >> configure.in_tmp1
 echo "	./salome_adm/unix/make_module \\" >> configure.in_tmp1
 
@@ -137,7 +137,7 @@ echo "	./salome_adm/unix/make_module \\" >> configure.in_tmp1
 # salome_adm, par le make_conclude (resp. make_commence) du module,
 # c'est à dire le make_conclude (resp. make_commence) du répertoire
 # adm_local
-echo "	./adm_local/unix/make_commence \\" >> configure.in_tmp1
+echo "	./adm_local/unix/make_commence:${ABS_CONF_DIR}/adm_local/unix/make_commence.in \\" >> configure.in_tmp1
 echo "	./salome_adm/unix/make_conclude \\" >> configure.in_tmp1
 
 \rm -f configure.in_tmp2 configure.in_tmp3
