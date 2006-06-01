@@ -12,7 +12,7 @@
             <component-username>PyCalculator</component-username>
             <component-type>OTHER</component-type>
             <component-author>LD</component-author>
-            <component-version>3.2.0b1</component-version>
+            <component-version>@VERSION@</component-version>
             <component-comment>Test component (Arithmetic operations with MED_Field)</component-comment>
             <component-multistudy>0</component-multistudy>
             <component-icone>PYCALCULATOR.png</component-icone>
