@@ -110,7 +110,7 @@ print "We are working in the study ",studyname," with the ID ",studynameId
 print ""
 
 filePath=os.environ["MED_ROOT_DIR"]
-filePath=filePath+"/share/salome/resources/"
+filePath=filePath+"/share/salome/resources/med/"
 medFile=filePath+"pointe.med"
 fieldname = "fieldcelldouble"
 
