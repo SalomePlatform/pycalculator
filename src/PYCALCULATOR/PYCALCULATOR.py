@@ -21,8 +21,8 @@
 # Instruct Python to load dynamic libraries using global resolution of symbols
 # This is necessary to ensure that different modules will have the same definition
 # of dynamic types and C++ RTTI will work between them
-import dl, sys
-sys.setdlopenflags(dl.RTLD_NOW | dl.RTLD_GLOBAL)
+import DLFCN, sys
+sys.setdlopenflags(DLFCN.RTLD_NOW | DLFCN.RTLD_GLOBAL)
 
 import PYCALCULATOR_ORB__POA
 import SALOME_ComponentPy
