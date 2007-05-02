@@ -1,4 +1,4 @@
-#  Copyright (C) 2005  CEA/DEN, EDF R&D
+#  Copyright (C) 2005  CEA/DEN, EDF R&D, OPEN CASCADE, PRINCIPIA R&D
 #
 #  This library is free software; you can redistribute it and/or
 #  modify it under the terms of the GNU Lesser General Public
@@ -14,49 +14,21 @@
 #  License along with this library; if not, write to the Free Software
 #  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307 USA
 #
-#  See http://www.salome-platform.org/ or email : webmaster.salome@opencascade.com
+# See http://www.salome-platform.org/ or email : webmaster.salome@opencascade.com
 #
 
 # -* Makefile *- 
 #
 # Author : Patrick GOLDBRONN (CEA)
 # Date : 30/11/2001
-
-# source path
-top_srcdir=@top_srcdir@
-top_builddir=../..
-srcdir=@srcdir@
-VPATH=.:@srcdir@
+#  Modified by : Alexander BORODIN (OCN) - autotools usage
+# $Header:
+#
 
 SUBDIRS= tui
+SUBDIRSTUI= tui
 
-@COMMENCE@
-
-docs:
-	@@SETX@; for d in $(SUBDIRS); do 	\
+dev_docs:
+	@@SETX@; for d in $(SUBDIRSTUI); do 	\
 	   (cd $$d && $(MAKE) $@) || exit 1; 	\
-	done; \
-	cp -f $(srcdir)/PYCALCULATOR_index.html PYCALCULATOR_index.html
-
-clean:
-	@@SETX@; for d in $(SUBDIRS); do 	\
-	   (cd $$d && $(MAKE) $@) || exit 1; 	\
-	done
-
-distclean: clean
-	@@SETX@; for d in $(SUBDIRS); do 	\
-	   (cd $$d && $(MAKE) $@) || exit 1; 	\
-	done
-
-install:
-	$(MAKE) docs
-	@@SETX@; for d in $(SUBDIRS); do 	\
-	   (cd $$d && $(MAKE) $@) || exit 1; 	\
-	done; \
-	cp -f PYCALCULATOR_index.html $(docdir)
-
-uninstall:
-	@@SETX@; for d in $(SUBDIRS); do 	\
-	   (cd $$d && $(MAKE) $@) || exit 1; 	\
-	done; \
-	rm -fr $(docdir)/PYCALCULATOR_index.html
+	done;

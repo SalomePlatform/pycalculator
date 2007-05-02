@@ -1,4 +1,5 @@
-#  Copyright (C) 2005  CEA/DEN, EDF R&D
+#  Copyright (C) 2005  OPEN CASCADE, EADS/CCR, LIP6, CEA/DEN,
+#  CEDRAT, EDF R&D, LEG, PRINCIPIA R&D, BUREAU VERITAS
 #
 #  This library is free software; you can redistribute it and/or
 #  modify it under the terms of the GNU Lesser General Public
@@ -16,43 +17,18 @@
 #
 # See http://www.salome-platform.org/ or email : webmaster.salome@opencascade.com
 #
-
 # -* Makefile *- 
 #
 # Author : Patrick GOLDBRONN (CEA)
-# Date : 30/11/2001
-# $Heade$
+# Date : 28/06/2001
+#  Modified by : Alexander BORODIN (OCN) - autotools usage
+# $Header$
 #
-# source path
-top_srcdir=@top_srcdir@
-top_builddir=..
-srcdir=@srcdir@
-VPATH=.:@srcdir@
 
-SUBDIRS= salome
+include $(top_srcdir)/adm_local/unix/make_common_starter.am
 
-@COMMENCE@
+dist_salomeres_DATA = \
+	SalomeApp.xml \
+	PYCALCULATOR.png
 
-docs:
-	@@SETX@; for d in $(SUBDIRS); do 	\
-	   (cd $$d && $(MAKE) $@) || exit 1; 	\
-	done
-clean:
-	@@SETX@; for d in $(SUBDIRS); do 	\
-	   (cd $$d && $(MAKE) $@) || exit 1; 	\
-	done
-
-distclean: clean
-	@@SETX@; for d in $(SUBDIRS); do 	\
-	   (cd $$d && $(MAKE) $@) || exit 1; 	\
-	done
-
-install:
-	@@SETX@; for d in $(SUBDIRS); do 	\
-	   (cd $$d && $(MAKE) $@) || exit 1; 	\
-	done
-
-uninstall:
-	@@SETX@; for d in $(SUBDIRS); do 	\
-	   (cd $$d && $(MAKE) $@) || exit 1; 	\
-	done
+nodist_salomeres_DATA = PYCALCULATORCatalog.xml

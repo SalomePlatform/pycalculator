@@ -1,4 +1,4 @@
-#  GEOM GEOM : implementaion of GEOM_Gen.idl and GEOM_Shape.idl
+#  SuperVisionTest AddComponent : example of component that adds two numbers
 #
 #  Copyright (C) 2003  OPEN CASCADE, EADS/CCR, LIP6, CEA/DEN,
 #  CEDRAT, EDF R&D, LEG, PRINCIPIA R&D, BUREAU VERITAS 
@@ -22,33 +22,12 @@
 #
 #
 #  File   : Makefile.in
-#  Author : Patrick GOLDBRONN (CEA)
-#  Module : GEOM
-#  $Header$
+#  Author : , CEA
+#  Modified by : Alexander BORODIN (OCN) - autotools usage
 
-top_srcdir=@top_srcdir@
-top_builddir=../..
-srcdir=@srcdir@
-VPATH=.:@srcdir@:@top_srcdir@/idl
+include $(top_srcdir)/adm_local/unix/make_common_starter.am
 
-
-@COMMENCE@
-
-# Libraries targets
-
-LIB =
-LIB_SRC =
-LIB_SERVER_IDL =
-
-# Executables targets
-BIN = 
-BIN_SRC = 
-BIN_CLIENT_IDL = 
-BIN_SERVER_IDL = 
-
-EXPORT_HEADERS =
-EXPORT_PYSCRIPTS = PYCALCULATOR.py PYCALCULATOR_TEST.py
-
-
-@CONCLUDE@
-
+# Scripts to be installed
+dist_salomescript_DATA = \
+	PYCALCULATOR.py \
+	PYCALCULATOR_TEST.py
