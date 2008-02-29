@@ -40,6 +40,7 @@ lib_LTLIBRARIES = libSalomeIDLPYCALCULATOR.la
 nodist_libSalomeIDLPYCALCULATOR_la_SOURCES = \
 	PYCALCULATOR_GenSK.cc \
 	PYCALCULATOR_GenDynSK.cc
+PYCALCULATOR_GenDynSK.cc: PYCALCULATOR_GenSK.cc
 
 # header files must be exported: other modules have to use this library
 nodist_salomeinclude_HEADERS= $(BASEIDL_FILES:%.idl=%.hh)
