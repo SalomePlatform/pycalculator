@@ -6,6 +6,6 @@
   </section>
   <section name="resources">
     <!-- Module resources -->
-    <parameter name="PYCALCULATOR" value="${PYCALCULATOR_ROOT_DIR}/share/salome/resources"/>
+    <parameter name="PYCALCULATOR" value="${PYCALCULATOR_ROOT_DIR}/share/salome/resources/pycalculator"/>
   </section>
 </document>

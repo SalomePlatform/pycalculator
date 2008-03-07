@@ -21,17 +21,10 @@
 #
 #  File   : Makefile.in
 #  Author : Patrick GOLDBRONN (CEA)
-#  Module : GEOM
-#  $Header$
+#  Modified by : Alexander BORODIN (OCN) - autotools usage
+#  Module : SuperVisionTest
+#  $Header: 
 
-top_srcdir=@top_srcdir@
-top_builddir=..
-srcdir=@srcdir@
-VPATH=.:@srcdir@
-
-
-@COMMENCE@
+include $(top_srcdir)/adm_local/unix/make_common_starter.am
 
 SUBDIRS = PYCALCULATOR
-
-@MODULE@

@@ -16,12 +16,21 @@
 #
 # See http://www.salome-platform.org/ or email : webmaster.salome@opencascade.com
 #
+
+
+# Instruct Python to load dynamic libraries using global resolution of symbols
+# This is necessary to ensure that different modules will have the same definition
+# of dynamic types and C++ RTTI will work between them
+import DLFCN, sys
+sys.setdlopenflags(DLFCN.RTLD_NOW | DLFCN.RTLD_GLOBAL)
+
 import PYCALCULATOR_ORB__POA
 import SALOME_ComponentPy
 
 import SALOME_MED
 from libMEDMEM_Swig import *
 from libMedCorba_Swig import *
+from libMEDClient import *
 
 class PYCALCULATOR (PYCALCULATOR_ORB__POA.PYCALCULATOR_Gen, SALOME_ComponentPy.SALOME_ComponentPy_i ):
 
@@ -114,12 +123,16 @@ class PYCALCULATOR (PYCALCULATOR_ORB__POA.PYCALCULATOR_Gen, SALOME_ComponentPy.S
             for k in range(lengthValue1*nbOfComp1):
                 valueOut.append(value1[k])
 
+        supportOutLocal = SUPPORTClient( support1 )
+        supportOutCorba = createCorbaSupport( supportOutLocal )
+
         print "CALCULATORPY::Add : Creation of the local field, nbOfComp = ",nbOfComp1, " length = ",lengthValue1
 
         fieldOutLocal = createLocalFieldDouble(nbOfComp1,lengthValue1)
-        fieldOutLocal.setValue(MED_FULL_INTERLACE,valueOut)
+        fieldOutLocal.setValue(valueOut)
         fieldOutLocal.setName("-new_Add_Field-")
         fieldOutLocal.setDescription(description1)
+        fieldOutLocal.setSupport( supportOutLocal )
 
         for k in range(nbOfComp1):
             kp1 = k + 1
@@ -128,7 +141,7 @@ class PYCALCULATOR (PYCALCULATOR_ORB__POA.PYCALCULATOR_Gen, SALOME_ComponentPy.S
 
         print "CALCULATORPY::Add : Creation of the CORBA field"
 
-        fieldOutCorba = createCorbaFieldDouble(support1,fieldOutLocal)
+        fieldOutCorba = createCorbaFieldDouble(supportOutCorba,fieldOutLocal)
 
         print "End of CALCULATORPY::Add"
         return fieldOutCorba
@@ -164,12 +177,16 @@ class PYCALCULATOR (PYCALCULATOR_ORB__POA.PYCALCULATOR_Gen, SALOME_ComponentPy.S
         for k in range(lengthValue*nbOfComp):
             valueOut.append(x1*value1[k])
 
+        supportOutLocal = SUPPORTClient( support )
+        supportOutCorba = createCorbaSupport( supportOutLocal )
+
         print "CALCULATORPY::Mul : Creation of the local field, nbOfComp = ",nbOfComp, " length = ",lengthValue
 
         fieldOutLocal = createLocalFieldDouble(nbOfComp,lengthValue)
-        fieldOutLocal.setValue(MED_FULL_INTERLACE,valueOut)
+        fieldOutLocal.setValue(valueOut)
         fieldOutLocal.setName("-new_Mul_Field-")
         fieldOutLocal.setDescription(description)
+        fieldOutLocal.setSupport( supportOutLocal )
 
         for k in range(nbOfComp):
             kp1 = k + 1
@@ -178,7 +195,7 @@ class PYCALCULATOR (PYCALCULATOR_ORB__POA.PYCALCULATOR_Gen, SALOME_ComponentPy.S
 
         print "CALCULATORPY::Mul : Creation of the CORBA field"
 
-        fieldOutCorba = createCorbaFieldDouble(support,fieldOutLocal)
+        fieldOutCorba = createCorbaFieldDouble(supportOutCorba,fieldOutLocal)
 
         print "End of CALCULATORPY::Mul"
         return fieldOutCorba
@@ -212,10 +229,14 @@ class PYCALCULATOR (PYCALCULATOR_ORB__POA.PYCALCULATOR_Gen, SALOME_ComponentPy.S
 
         print "CALCULATORPY::Constant : Creation of the local field, nbOfComp = ",nbOfComp, " length = ",lengthValue
 
+        supportOutLocal = SUPPORTClient( support )
+        supportOutCorba = createCorbaSupport( supportOutLocal )
+
         fieldOutLocal = createLocalFieldDouble(nbOfComp,lengthValue)
-        fieldOutLocal.setValue(MED_FULL_INTERLACE,valueOut)
+        fieldOutLocal.setValue(valueOut)
         fieldOutLocal.setName("-new_Const_Field-")
         fieldOutLocal.setDescription(description)
+        fieldOutLocal.setSupport( supportOutLocal )
 
         for k in range(nbOfComp):
             kp1 = k + 1
@@ -224,7 +245,7 @@ class PYCALCULATOR (PYCALCULATOR_ORB__POA.PYCALCULATOR_Gen, SALOME_ComponentPy.S
 
         print "CALCULATORPY::Constant : Creation of the CORBA field"
 
-        fieldOutCorba = createCorbaFieldDouble(support,fieldOutLocal)
+        fieldOutCorba = createCorbaFieldDouble(supportOutCorba,fieldOutLocal)
 
         print "End of CALCULATORPY::Constant"
         return fieldOutCorba
