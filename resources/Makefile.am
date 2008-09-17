@@ -31,4 +31,5 @@ dist_salomeres_DATA = \
 	SalomeApp.xml \
 	PYCALCULATOR.png
 
-nodist_salomeres_DATA = PYCALCULATORCatalog.xml
+# VSR: little trick to avoid putting if PYCALCULATORCatalog.xml to the distribution archive
+nodist_salomeres_SCRIPTS = PYCALCULATORCatalog.xml

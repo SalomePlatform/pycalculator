@@ -27,4 +27,9 @@
 #
 # source path
 
-SUBDIRS= salome
+include $(top_srcdir)/adm_local/unix/make_common_starter.am
+
+SUBDIRS = salome
+
+dev_docs:
+	(cd salome && $(MAKE) $(AM_MAKEFLAGS) dev_docs)

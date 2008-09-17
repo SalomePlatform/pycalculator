@@ -15,7 +15,7 @@
 # Created from configure.in.base
 #
 
-AC_INIT([Salome2 Project PYCALCULATOR module], [5.0.0], [webmaster.salome@opencascade.com], [salome])
+AC_INIT([Salome2 Project PYCALCULATOR module], [5.0.0], [webmaster.salome@opencascade.com], [SalomePYCALCULATOR])
 AC_CONFIG_AUX_DIR(salome_adm/unix/config_files)
 AC_CANONICAL_HOST
 AC_CANONICAL_TARGET
@@ -282,7 +282,7 @@ AC_OUTPUT([ \
   ./doc/Makefile \
   ./doc/salome/Makefile \
   ./doc/salome/tui/Makefile \
-  ./doc/salome/tui/PYCALCULATOR/doxyfile \
+  ./doc/salome/tui/doxyfile \
   ./src/Makefile \
   ./src/PYCALCULATOR/Makefile \
   ./resources/Makefile \

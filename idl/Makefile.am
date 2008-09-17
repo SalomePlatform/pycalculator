@@ -28,10 +28,8 @@ include $(top_srcdir)/adm_local/unix/make_common_starter.am
 
 BASEIDL_FILES = PYCALCULATOR_Gen.idl
 
-EXTRA_DIST+= $(BASEIDL_FILES)
-
 # This variable defines the files to be installed
-salomeidl_DATA = $(BASEIDL_FILES)
+dist_salomeidl_DATA = $(BASEIDL_FILES)
 
 # GUI idl common library
 lib_LTLIBRARIES = libSalomeIDLPYCALCULATOR.la
@@ -43,9 +41,9 @@ nodist_libSalomeIDLPYCALCULATOR_la_SOURCES = \
 PYCALCULATOR_GenDynSK.cc: PYCALCULATOR_GenSK.cc
 
 # header files must be exported: other modules have to use this library
-nodist_salomeinclude_HEADERS= $(BASEIDL_FILES:%.idl=%.hh)
+nodist_salomeinclude_HEADERS = $(BASEIDL_FILES:%.idl=%.hh)
 
-libSalomeIDLPYCALCULATOR_la_CPPFLAGS =\
+libSalomeIDLPYCALCULATOR_la_CPPFLAGS = \
 	$(KERNEL_CXXFLAGS) \
 	$(MED_CXXFLAGS) \
 	-I$(top_builddir)/salome_adm/unix \
@@ -88,14 +86,14 @@ SUFFIXES = .idl .hh SK.cc
 	$(OMNIORB_IDL) $(IDLCXXFLAGS) $(OMNIORB_IDLCXXFLAGS) $<
 
 install-exec-local: $(BASEIDL_FILES:%=$(top_srcdir)/idl/%)
-	$(INSTALL) -d  $(pkgpythondir)
+	$(INSTALL) -d  $(DESTDIR)$(salomepythondir)
 	ls $^ | while read file; do \
-	  $(OMNIORB_IDL) $(IDLPYFLAGS) -C$(pkgpythondir) $$file ; \
+	  $(OMNIORB_IDL) $(IDLPYFLAGS) -C$(DESTDIR)$(salomepythondir) $$file ; \
 	done
 
 # uninstall-local removes too much, but it works in distcheck
 uninstall-local:
-	rm -rf $(pkgpythondir)/*
+	rm -rf $(DESTDIR)$(salomepythondir)/*
 
 mostlyclean-local:
 	-rm -f *.hh *.cc .depidl

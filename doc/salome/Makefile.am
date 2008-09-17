@@ -25,8 +25,10 @@
 # $Header:
 #
 
-SUBDIRS= tui
-SUBDIRSTUI= tui
+include $(top_srcdir)/adm_local/unix/make_common_starter.am
+
+SUBDIRS    = tui
+SUBDIRSTUI = tui
 
 dev_docs:
 	@@SETX@; for d in $(SUBDIRSTUI); do 	\
