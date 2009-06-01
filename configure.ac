@@ -29,7 +29,7 @@
 # Modified by : Marc Tajchman (CEA)
 # Created from configure.in.base
 #
-AC_INIT([Salome2 Project PYCALCULATOR module], [5.1.1], [webmaster.salome@opencascade.com], [SalomePYCALCULATOR])
+AC_INIT([Salome2 Project PYCALCULATOR module], [5.1.2], [webmaster.salome@opencascade.com], [SalomePYCALCULATOR])
 AC_CONFIG_AUX_DIR(salome_adm/unix/config_files)
 AC_CANONICAL_HOST
 AC_CANONICAL_TARGET
