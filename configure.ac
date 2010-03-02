@@ -251,7 +251,7 @@ do
 done
 
 echo "---Optional:"
-variables="mpi_ok cppunit_ok openpbs_ok lsf_ok doxygen_ok graphviz_ok"
+variables="mpi_ok cppunit_ok doxygen_ok graphviz_ok"
  
 for var in $variables
 do
