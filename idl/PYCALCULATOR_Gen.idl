@@ -18,16 +18,14 @@
 //  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307 USA
 //
 //  See http://www.salome-platform.org/ or email : webmaster.salome@opencascade.com
-//
 
 //=============================================================================
 // File      : Calculator.idl
 // Created   : jeu nov 08 12:08:17 CEST 2001
 // Author    : Laurent DADA CEA
 // Project   : SALOME
-// $Header$
 //=============================================================================
-//
+
 #ifndef PYCALCULATOR_IDL
 #define PYCALCULATOR_IDL
 
@@ -37,7 +35,7 @@
 
 module PYCALCULATOR_ORB {
 
-interface PYCALCULATOR_Gen : Engines::Component
+interface PYCALCULATOR_Gen : Engines::EngineComponent
 {
 
   SALOME_MED::FIELDDOUBLE Add(in SALOME_MED::FIELDDOUBLE field1, in SALOME_MED::FIELDDOUBLE field2);
