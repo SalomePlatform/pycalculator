@@ -50,11 +50,11 @@ def AnalyzeField(field):
         if fieldEntity == SALOME_MED.MED_NODE:
             nbValByComp = fieldMesh.getNumberOfNodes()
         else:
-            nbValByComp = fieldMesh.getNumberOfElements(fieldEntity,SALOME_MED.MED_ALL_ELEMENTS)
+            nbValByComp = fieldMesh.getNumberOfElements(fieldEntity,SALOME_MED.MEDMEM_ALL_ELEMENTS)
         print "and its dimension (number of values by component of the field) is ",nbValByComp
     else:
         print "The support of this field is partially on entities ",fieldEntity," of the mesh ",fieldMesh.getName()
-        nbValByComp = fieldSupport.getNumberOfElements(SALOME_MED.MED_ALL_ELEMENTS)
+        nbValByComp = fieldSupport.getNumberOfElements(SALOME_MED.MEDMEM_ALL_ELEMENTS)
         print "and its dimension (number of values by component of the field) is ",nbValByComp
 
     for i in range(nbComp):
@@ -116,7 +116,7 @@ print ""
 filePath=os.environ["MED_ROOT_DIR"]
 filePath=filePath+"/share/salome/resources/med/"
 medFile=filePath+"pointe.med"
-fieldname = "fieldcelldouble"
+fieldname = "fieldcelldoublevector"
 
 print "Load the Med Component "
 med_comp = salome.lcc.FindOrLoadComponent("FactoryServer", "MED")
@@ -143,8 +143,7 @@ AnalyzeField(fieldcell)
 
 print "Loading of the CalculatorPy Component "
 calculator = salome.lcc.FindOrLoadComponent("FactoryServerPy", "PYCALCULATOR")
-print "calculator = "
-dir(calculator)
+print "calculator = ", calculator
 
 alpha = 2.0
 print "Multiplication of fieldcelldouble by alpha"
@@ -165,7 +164,7 @@ salome.sg.updateObjBrowser(1)
 
 print "Get back Field from study"
 # we grab the second field in MEDFIELD - first iteration
-fieldcelldouble = getFieldDoubleObjectFromStudy(2,1)
+fieldcelldouble = getFieldDoubleObjectFromStudy(1,1)
 print fieldcelldouble
 AnalyzeField(fieldcelldouble)
 
