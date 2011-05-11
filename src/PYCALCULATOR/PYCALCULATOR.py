@@ -81,22 +81,22 @@ class PYCALCULATOR (PYCALCULATOR_ORB__POA.PYCALCULATOR_Gen, SALOME_ComponentPy.S
         mesh2 = support2.getMesh()
 
         if (support1.isOnAllElements()):
-            lengthValue1 = mesh1.getNumberOfElements(entity1,SALOME_MED.MEDMEM_ALL_ELEMENTS)
+            lengthValue1 = mesh1.getNumberOfElements(entity1,SALOME_MED.MED_ALL_ELEMENTS)
             number1 = []
             for k in range(lengthValue1):
                 number1.append(k)
         else:
-            lengthValue1 = support1.getNumberOfElements(SALOME_MED.MEDMEM_ALL_ELEMENTS)
-            number1 = support1.getNumber(SALOME_MED.MEDMEM_ALL_ELEMENTS)
+            lengthValue1 = support1.getNumberOfElements(SALOME_MED.MED_ALL_ELEMENTS)
+            number1 = support1.getNumber(SALOME_MED.MED_ALL_ELEMENTS)
 
         if (support2.isOnAllElements()):
-            lengthValue2 = mesh2.getNumberOfElements(entity2,SALOME_MED.MEDMEM_ALL_ELEMENTS)
+            lengthValue2 = mesh2.getNumberOfElements(entity2,SALOME_MED.MED_ALL_ELEMENTS)
             number2 = []
             for k in range(lengthValue2):
                 number2.append(k)
         else:
-            lengthValue2 = support2.getNumberOfElements(SALOME_MED.MEDMEM_ALL_ELEMENTS)
-            number2 = support2.getNumber(SALOME_MED.MEDMEM_ALL_ELEMENTS)
+            lengthValue2 = support2.getNumberOfElements(SALOME_MED.MED_ALL_ELEMENTS)
+            number2 = support2.getNumber(SALOME_MED.MED_ALL_ELEMENTS)
 
         # comparision of each support: due to the fact that they are CORBA
         # pointers, the comparision will be done directly throught the numbers
@@ -171,9 +171,9 @@ class PYCALCULATOR (PYCALCULATOR_ORB__POA.PYCALCULATOR_Gen, SALOME_ComponentPy.S
         mesh = support.getMesh()
 
         if (support.isOnAllElements()):
-            lengthValue = mesh.getNumberOfElements(support.getEntity(),SALOME_MED.MEDMEM_ALL_ELEMENTS)
+            lengthValue = mesh.getNumberOfElements(support.getEntity(),SALOME_MED.MED_ALL_ELEMENTS)
         else:
-            lengthValue = support.getNumberOfElements(SALOME_MED.MEDMEM_ALL_ELEMENTS)
+            lengthValue = support.getNumberOfElements(SALOME_MED.MED_ALL_ELEMENTS)
 
         value1 = field1.getValue(SALOME_MED.MED_FULL_INTERLACE)
         valueOut = []
@@ -222,9 +222,9 @@ class PYCALCULATOR (PYCALCULATOR_ORB__POA.PYCALCULATOR_Gen, SALOME_ComponentPy.S
         mesh = support.getMesh()
 
         if (support.isOnAllElements()):
-            lengthValue = mesh.getNumberOfElements(support.getEntity(),SALOME_MED.MEDMEM_ALL_ELEMENTS)
+            lengthValue = mesh.getNumberOfElements(support.getEntity(),SALOME_MED.MED_ALL_ELEMENTS)
         else:
-            lengthValue = support.getNumberOfElements(SALOME_MED.MEDMEM_ALL_ELEMENTS)
+            lengthValue = support.getNumberOfElements(SALOME_MED.MED_ALL_ELEMENTS)
 
         valueOut = []
         for k in range(lengthValue*nbOfComp):
