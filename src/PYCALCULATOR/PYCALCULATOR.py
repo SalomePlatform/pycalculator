@@ -1,23 +1,23 @@
-#  Copyright (C) 2007-2010  CEA/DEN, EDF R&D, OPEN CASCADE
+# Copyright (C) 2007-2011  CEA/DEN, EDF R&D, OPEN CASCADE
 #
-#  Copyright (C) 2003-2007  OPEN CASCADE, EADS/CCR, LIP6, CEA/DEN,
-#  CEDRAT, EDF R&D, LEG, PRINCIPIA R&D, BUREAU VERITAS
+# Copyright (C) 2003-2007  OPEN CASCADE, EADS/CCR, LIP6, CEA/DEN,
+# CEDRAT, EDF R&D, LEG, PRINCIPIA R&D, BUREAU VERITAS
 #
-#  This library is free software; you can redistribute it and/or
-#  modify it under the terms of the GNU Lesser General Public
-#  License as published by the Free Software Foundation; either
-#  version 2.1 of the License.
+# This library is free software; you can redistribute it and/or
+# modify it under the terms of the GNU Lesser General Public
+# License as published by the Free Software Foundation; either
+# version 2.1 of the License.
 #
-#  This library is distributed in the hope that it will be useful,
-#  but WITHOUT ANY WARRANTY; without even the implied warranty of
-#  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-#  Lesser General Public License for more details.
+# This library is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# Lesser General Public License for more details.
 #
-#  You should have received a copy of the GNU Lesser General Public
-#  License along with this library; if not, write to the Free Software
-#  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307 USA
+# You should have received a copy of the GNU Lesser General Public
+# License along with this library; if not, write to the Free Software
+# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307 USA
 #
-#  See http://www.salome-platform.org/ or email : webmaster.salome@opencascade.com
+# See http://www.salome-platform.org/ or email : webmaster.salome@opencascade.com
 #
 
 # Instruct Python to load dynamic libraries using global resolution of symbols
@@ -81,22 +81,22 @@ class PYCALCULATOR (PYCALCULATOR_ORB__POA.PYCALCULATOR_Gen, SALOME_ComponentPy.S
         mesh2 = support2.getMesh()
 
         if (support1.isOnAllElements()):
-            lengthValue1 = mesh1.getNumberOfElements(entity1,SALOME_MED.MEDMEM_ALL_ELEMENTS)
+            lengthValue1 = mesh1.getNumberOfElements(entity1,SALOME_MED.MED_ALL_ELEMENTS)
             number1 = []
             for k in range(lengthValue1):
                 number1.append(k)
         else:
-            lengthValue1 = support1.getNumberOfElements(SALOME_MED.MEDMEM_ALL_ELEMENTS)
-            number1 = support1.getNumber(SALOME_MED.MEDMEM_ALL_ELEMENTS)
+            lengthValue1 = support1.getNumberOfElements(SALOME_MED.MED_ALL_ELEMENTS)
+            number1 = support1.getNumber(SALOME_MED.MED_ALL_ELEMENTS)
 
         if (support2.isOnAllElements()):
-            lengthValue2 = mesh2.getNumberOfElements(entity2,SALOME_MED.MEDMEM_ALL_ELEMENTS)
+            lengthValue2 = mesh2.getNumberOfElements(entity2,SALOME_MED.MED_ALL_ELEMENTS)
             number2 = []
             for k in range(lengthValue2):
                 number2.append(k)
         else:
-            lengthValue2 = support2.getNumberOfElements(SALOME_MED.MEDMEM_ALL_ELEMENTS)
-            number2 = support2.getNumber(SALOME_MED.MEDMEM_ALL_ELEMENTS)
+            lengthValue2 = support2.getNumberOfElements(SALOME_MED.MED_ALL_ELEMENTS)
+            number2 = support2.getNumber(SALOME_MED.MED_ALL_ELEMENTS)
 
         # comparision of each support: due to the fact that they are CORBA
         # pointers, the comparision will be done directly throught the numbers
@@ -171,9 +171,9 @@ class PYCALCULATOR (PYCALCULATOR_ORB__POA.PYCALCULATOR_Gen, SALOME_ComponentPy.S
         mesh = support.getMesh()
 
         if (support.isOnAllElements()):
-            lengthValue = mesh.getNumberOfElements(support.getEntity(),SALOME_MED.MEDMEM_ALL_ELEMENTS)
+            lengthValue = mesh.getNumberOfElements(support.getEntity(),SALOME_MED.MED_ALL_ELEMENTS)
         else:
-            lengthValue = support.getNumberOfElements(SALOME_MED.MEDMEM_ALL_ELEMENTS)
+            lengthValue = support.getNumberOfElements(SALOME_MED.MED_ALL_ELEMENTS)
 
         value1 = field1.getValue(SALOME_MED.MED_FULL_INTERLACE)
         valueOut = []
@@ -222,9 +222,9 @@ class PYCALCULATOR (PYCALCULATOR_ORB__POA.PYCALCULATOR_Gen, SALOME_ComponentPy.S
         mesh = support.getMesh()
 
         if (support.isOnAllElements()):
-            lengthValue = mesh.getNumberOfElements(support.getEntity(),SALOME_MED.MEDMEM_ALL_ELEMENTS)
+            lengthValue = mesh.getNumberOfElements(support.getEntity(),SALOME_MED.MED_ALL_ELEMENTS)
         else:
-            lengthValue = support.getNumberOfElements(SALOME_MED.MEDMEM_ALL_ELEMENTS)
+            lengthValue = support.getNumberOfElements(SALOME_MED.MED_ALL_ELEMENTS)
 
         valueOut = []
         for k in range(lengthValue*nbOfComp):
