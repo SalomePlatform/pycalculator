@@ -26,6 +26,7 @@
     <!-- Major module parameters -->
     <parameter name="name" value="PyCalculator"/>
     <parameter name="icon" value="PYCALCULATOR.png"/>
+    <parameter name="PYCALCULATOR_VERSION" value="@VERSION@"/>
   </section>
   <section name="resources">
     <!-- Module resources -->

@@ -318,6 +318,7 @@ AC_OUTPUT([ \
   src/PYCALCULATOR/Makefile \
   resources/Makefile \
   resources/PYCALCULATORCatalog.xml \
+  resources/SalomeApp.xml \
   idl/Makefile \
   Makefile \
 ])
