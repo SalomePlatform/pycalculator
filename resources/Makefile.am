@@ -26,8 +26,7 @@
 include $(top_srcdir)/adm_local/unix/make_common_starter.am
 
 dist_salomeres_DATA = \
-	$(top_builddir)/resources/SalomeApp.xml \
 	PYCALCULATOR.png
 
 # VSR: little trick to avoid putting if PYCALCULATORCatalog.xml to the distribution archive
-nodist_salomeres_SCRIPTS = PYCALCULATORCatalog.xml
+nodist_salomeres_SCRIPTS = PYCALCULATORCatalog.xml SalomeApp.xml
