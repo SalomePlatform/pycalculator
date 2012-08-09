@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='us-ascii' ?>
 <!--
-  Copyright (C) 2007-2008  CEA/DEN, EDF R&D, OPEN CASCADE
+  Copyright (C) 2007-2012  CEA/DEN, EDF R&D, OPEN CASCADE
 
   Copyright (C) 2003-2007  OPEN CASCADE, EADS/CCR, LIP6, CEA/DEN,
   CEDRAT, EDF R&D, LEG, PRINCIPIA R&D, BUREAU VERITAS
@@ -58,19 +58,19 @@
                         <inParameter-list>
                             <inParameter>
                                 <inParameter-name>field1</inParameter-name>
-                                <inParameter-type>FIELDDOUBLE</inParameter-type>
+                                <inParameter-type>SALOME_MED/FIELDDOUBLE</inParameter-type>
                                 <inParameter-comment>first field of double</inParameter-comment>
                             </inParameter>
                             <inParameter>
                                 <inParameter-name>field2</inParameter-name>
-                                <inParameter-type>FIELDDOUBLE</inParameter-type>
+                                <inParameter-type>SALOME_MED/FIELDDOUBLE</inParameter-type>
                                 <inParameter-comment>second field of double</inParameter-comment>
                             </inParameter>
                         </inParameter-list>
                         <outParameter-list>
                             <outParameter>
                                 <outParameter-name>result</outParameter-name>
-                                <outParameter-type>FIELDDOUBLE</outParameter-type>
+                                <outParameter-type>SALOME_MED/FIELDDOUBLE</outParameter-type>
                                 <outParameter-comment>result</outParameter-comment>
                             </outParameter>
                         </outParameter-list>
@@ -87,7 +87,7 @@
                         <inParameter-list>
                             <inParameter>
                                 <inParameter-name>field1</inParameter-name>
-                                <inParameter-type>FIELDDOUBLE</inParameter-type>
+                                <inParameter-type>SALOME_MED/FIELDDOUBLE</inParameter-type>
                                 <inParameter-comment>initial field of double</inParameter-comment>
                             </inParameter>
                             <inParameter>
@@ -99,7 +99,7 @@
                         <outParameter-list>
                             <outParameter>
                                 <outParameter-name>result</outParameter-name>
-                                <outParameter-type>FIELDDOUBLE</outParameter-type>
+                                <outParameter-type>SALOME_MED/FIELDDOUBLE</outParameter-type>
                                 <outParameter-comment>result</outParameter-comment>
                             </outParameter>
                         </outParameter-list>
@@ -116,7 +116,7 @@
                         <inParameter-list>
                             <inParameter>
                                 <inParameter-name>field1</inParameter-name>
-                                <inParameter-type>FIELDDOUBLE</inParameter-type>
+                                <inParameter-type>SALOME_MED/FIELDDOUBLE</inParameter-type>
                                 <inParameter-comment>allows to build the support</inParameter-comment>
                             </inParameter>
                             <inParameter>
@@ -128,7 +128,7 @@
                         <outParameter-list>
                             <outParameter>
                                 <outParameter-name>result</outParameter-name>
-                                <outParameter-type>FIELDDOUBLE</outParameter-type>
+                                <outParameter-type>SALOME_MED/FIELDDOUBLE</outParameter-type>
                                 <outParameter-comment>result based on first field support</outParameter-comment>
                             </outParameter>
                         </outParameter-list>
@@ -145,7 +145,7 @@
                         <inParameter-list>
                             <inParameter>
                                 <inParameter-name>field1</inParameter-name>
-                                <inParameter-type>FIELDDOUBLE</inParameter-type>
+                                <inParameter-type>SALOME_MED/FIELDDOUBLE</inParameter-type>
                                 <inParameter-comment>transient Med field</inParameter-comment>
                             </inParameter>
                             <inParameter>
