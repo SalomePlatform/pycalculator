@@ -46,6 +46,10 @@ class PYCALCULATOR (PYCALCULATOR_ORB__POA.PYCALCULATOR_Gen, SALOME_ComponentPy.S
 	self._naming_service=SALOME_ComponentPy.SALOME_NamingServicePy_i(self._orb)
         print "End of PYCALCULATOR::__init__" 
 
+    def getVersion( self ):
+        import salome_version
+        return salome_version.getVersion("PYCALCULATOR", True)
+
     def Add(self, field1, field2):
         print "Begin of PYCALCULATOR::Add"
         print "pointeur on first argument : ",field1
