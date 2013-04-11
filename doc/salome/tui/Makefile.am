@@ -23,7 +23,10 @@
 #
 include $(top_srcdir)/adm_local/unix/make_common_starter.am
 
-EXTRA_DIST += images static
+EXTRA_DIST += images static/footer.html static/salome_extra.css
+
+tuidocdir = $(docdir)/tui/PYCALCULATOR
+tuidoc_DATA = images/head.png
 
 dev_docs: doxyfile
 	echo "Running doxygen in directory: "`pwd`; \

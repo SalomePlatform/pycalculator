@@ -316,6 +316,7 @@ AC_OUTPUT([ \
   doc/salome/Makefile \
   doc/salome/tui/Makefile \
   doc/salome/tui/doxyfile \
+  doc/salome/tui/static/header.html \
   src/Makefile \
   src/PYCALCULATOR/Makefile \
   resources/Makefile \
