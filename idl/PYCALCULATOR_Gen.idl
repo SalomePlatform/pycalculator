@@ -20,33 +20,77 @@
 // See http://www.salome-platform.org/ or email : webmaster.salome@opencascade.com
 //
 
-//=============================================================================
-// File      : Calculator.idl
-// Created   : jeu nov 08 12:08:17 CEST 2001
-// Author    : Laurent DADA CEA
-// Project   : SALOME
-//=============================================================================
+//============================================================================
+// File   : PYCALCULATOR.idl
+// Author : Vadim SANDLER, OPEN CASCADE S.A.S. (vadim.sandler@opencascade.com)
+//============================================================================
 
 #ifndef PYCALCULATOR_IDL
 #define PYCALCULATOR_IDL
 
 #include "SALOME_Component.idl"
-#include "MED.idl"
+#include "MEDCouplingCorbaServant.idl"
 
+/*! 
+  \ingroup examples
+  This package contains the interface for %PYCALCULATOR component
+  as an example in %SALOME application.
+*/
 
 module PYCALCULATOR_ORB {
 
-interface PYCALCULATOR_Gen : Engines::EngineComponent
-{
+  /*!
+    \brief Interface of the %PYCALCULATOR component
+  */
+  interface PYCALCULATOR_Gen : Engines::EngineComponent
+  {
+    /*!
+      \brief Clone field.
+      \param field a field
+      \return a field which is a copy of \a field
+    */
+    SALOME_MED::MEDCouplingFieldDoubleCorbaInterface
+              Clone(in SALOME_MED::MEDCouplingFieldDoubleCorbaInterface field);
 
-  SALOME_MED::FIELDDOUBLE Add(in SALOME_MED::FIELDDOUBLE field1, in SALOME_MED::FIELDDOUBLE field2);
-  SALOME_MED::FIELDDOUBLE Mul(in SALOME_MED::FIELDDOUBLE field1, in double x1);
-  SALOME_MED::FIELDDOUBLE Constant(in SALOME_MED::FIELDDOUBLE field1, in double x1);
-  void writeMEDfile(in SALOME_MED::FIELDDOUBLE field1, in string fileName);
+    /*!
+      \brief Add two fields.
+      \param field1 first field
+      \param field2 second field
+      \return a field which is result of addition of \a field1 and \a field2
+    */
+    SALOME_MED::MEDCouplingFieldDoubleCorbaInterface
+              Add(in SALOME_MED::MEDCouplingFieldDoubleCorbaInterface field1,
+		  in SALOME_MED::MEDCouplingFieldDoubleCorbaInterface field2);
 
+    /*!
+      \brief Multiply two fields.
+      \param field1 first field
+      \param field2 second field
+      \return a field which is result of multiplication of \a field1 and \a field2
+    */
+    SALOME_MED::MEDCouplingFieldDoubleCorbaInterface
+              Mul(in SALOME_MED::MEDCouplingFieldDoubleCorbaInterface field1,
+		  in SALOME_MED::MEDCouplingFieldDoubleCorbaInterface field2);
+
+    /*!
+      \brief Add a constant to a field.
+      \param field a field
+      \param val a constant
+      \return a field which is result of addition of \a val to \a field
+    */
+    SALOME_MED::MEDCouplingFieldDoubleCorbaInterface
+              AddConstant(in SALOME_MED::MEDCouplingFieldDoubleCorbaInterface field,
+			  in double val);
+    /*!
+      \brief Multiply a field to a constant.
+      \param field a field
+      \param val a constant
+      \return a field which is result of multiplication of \a field to \a val
+    */
+    SALOME_MED::MEDCouplingFieldDoubleCorbaInterface
+              MulConstant(in SALOME_MED::MEDCouplingFieldDoubleCorbaInterface field,
+			  in double val);
+  };
 };
-};
-
-
 
 #endif
