@@ -16,15 +16,15 @@
 #
 # See http://www.salome-platform.org/ or email : webmaster.salome@opencascade.com
 #
-
-#  SuperVisionTest AddComponent : example of component that adds two numbers
-#  File   : Makefile.in
-#  Author : , CEA
-#  Modified by : Alexander BORODIN (OCN) - autotools usage
 #
-include $(top_srcdir)/adm_local/unix/make_common_starter.am
 
-# Scripts to be installed
-dist_salomescript_SCRIPTS = \
-	PYCALCULATOR.py \
-	PYCALCULATOR_TEST.py
+IF(NOT SalomePYCALCULATOR_FIND_QUIETLY)
+  MESSAGE(STATUS "Looking for Salome PYCALCULATOR ...")
+ENDIF()
+
+SET(CMAKE_PREFIX_PATH "${PYCALCULATOR_ROOT_DIR}")
+SALOME_FIND_PACKAGE(SalomePYCALCULATOR SalomePYCALCULATOR CONFIG)
+
+IF(NOT SalomePYCALCULATOR_FIND_QUIETLY)
+  MESSAGE(STATUS "Found Salome PYCALCULATOR: ${PYCALCULATOR_ROOT_DIR}")
+ENDIF()

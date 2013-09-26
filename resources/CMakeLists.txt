@@ -1,5 +1,8 @@
 # Copyright (C) 2007-2013  CEA/DEN, EDF R&D, OPEN CASCADE
 #
+# Copyright (C) 2003-2007  OPEN CASCADE, EADS/CCR, LIP6, CEA/DEN,
+# CEDRAT, EDF R&D, LEG, PRINCIPIA R&D, BUREAU VERITAS
+#
 # This library is free software; you can redistribute it and/or
 # modify it under the terms of the GNU Lesser General Public
 # License as published by the Free Software Foundation; either
@@ -17,18 +20,11 @@
 # See http://www.salome-platform.org/ or email : webmaster.salome@opencascade.com
 #
 
-# -* Makefile *- 
-# Author : Patrick GOLDBRONN (CEA)
-# Date : 30/11/2001
-#  Modified by : Alexander BORODIN (OCN) - autotools usage
-# $Header:
-#
-include $(top_srcdir)/adm_local/unix/make_common_starter.am
+SET(PYCALCULATOR_RESOURCES_FILES
+  PYCALCULATOR.png
+)
 
-SUBDIRS    = tui
-SUBDIRSTUI = tui
+INSTALL(FILES ${PYCALCULATOR_RESOURCES_FILES} DESTINATION ${SALOME_PYCALCULATOR_INSTALL_RES_DATA})
 
-dev_docs:
-	@@SETX@; for d in $(SUBDIRSTUI); do 	\
-	   (cd $$d && $(MAKE) $@) || exit 1; 	\
-	done;
+SALOME_CONFIGURE_FILE(${CMAKE_CURRENT_SOURCE_DIR}/SalomeApp.xml.in ${CMAKE_CURRENT_BINARY_DIR}/SalomeApp.xml INSTALL ${SALOME_PYCALCULATOR_INSTALL_RES_DATA})
+SALOME_CONFIGURE_FILE(${CMAKE_CURRENT_SOURCE_DIR}/PYCALCULATORCatalog.xml.in ${CMAKE_CURRENT_BINARY_DIR}/PYCALCULATORCatalog.xml INSTALL ${SALOME_PYCALCULATOR_INSTALL_RES_DATA})

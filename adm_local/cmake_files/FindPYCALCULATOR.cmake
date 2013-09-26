@@ -16,7 +16,8 @@
 #
 # See http://www.salome-platform.org/ or email : webmaster.salome@opencascade.com
 #
+#
 
-include $(top_srcdir)/adm_local/unix/make_common_starter.am
+SET(PYCALCULATOR_CXXFLAGS -I${PYCALCULATOR_ROOT_DIR}/include/salome)
 
-SUBDIRS = unix
+FIND_LIBRARY(SalomeIDLPYCALCULATOR SalomeIDLPYCALCULATOR ${PYCALCULATOR_ROOT_DIR}/lib/salome)
