@@ -43,7 +43,7 @@ SET_AND_CHECK(PYCALCULATOR_INCLUDE_DIRS "${PYCALCULATOR_ROOT_DIR_EXP}/@SALOME_IN
 # imported if we are not built as a subproject (in this case targets are already there)
 IF(NOT TARGET SalomeIDLPYCALCULATOR AND NOT @PROJECT_NAME@_BINARY_DIR)
   INCLUDE("${PYCALCULATOR_ROOT_DIR_EXP}/${SALOME_INSTALL_CMAKE_LOCAL}/SalomePYCALCULATORTargets.cmake")
-ENDIF()   
+ENDIF()
 
 #### Now the specificities
 
