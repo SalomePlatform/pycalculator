@@ -136,7 +136,9 @@ ADD_SUBDIRECTORY(adm_local)
 ADD_SUBDIRECTORY(resources)
 ADD_SUBDIRECTORY(src)
 ADD_SUBDIRECTORY(bin)
-ADD_SUBDIRECTORY(doc)
+IF(SALOME_BUILD_DOC)
+  ADD_SUBDIRECTORY(doc)
+ENDIF()
 
 # Configuration export
 # (here only the level 1 prerequisites are exposed)
