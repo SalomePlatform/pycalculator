@@ -60,13 +60,20 @@ LIST(APPEND CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}/adm_local/cmake_files")
 # User options
 # (some options have already been defined in KERNEL) 
 # ============
-#OPTION(SALOME_BUILD_TESTS "Build SALOME tests" ${SALOME_BUILD_TESTS}) For use in the future
-OPTION(SALOME_BUILD_DOC "Generate SALOME PYCALCULATOR documentation" ${SALOME_BUILD_DOC})
+# OPTION(SALOME_BUILD_TESTS "Build SALOME tests" ON) For use in the future
+OPTION(SALOME_BUILD_DOC "Generate SALOME PYCALCULATOR documentation" ON)
   
 IF(SALOME_BUILD_DOC)
   FIND_PACKAGE(SalomeDoxygen)
   SALOME_LOG_OPTIONAL_PACKAGE(Doxygen SALOME_BUILD_DOC)
 ENDIF()
+
+##
+## From KERNEL:
+##
+FIND_PACKAGE(SalomePython REQUIRED)
+FIND_PACKAGE(SalomeOmniORB REQUIRED)
+FIND_PACKAGE(SalomeOmniORBPy REQUIRED)
   
 # Find MED
 # ===========
@@ -78,14 +85,6 @@ IF(EXISTS ${MED_ROOT_DIR})
 ELSE(EXISTS ${MED_ROOT_DIR})
   MESSAGE(FATAL_ERROR "We absolutely need a Salome MED, please define MED_ROOT_DIR")
 ENDIF(EXISTS ${MED_ROOT_DIR})
-
-##
-## PYCALCULATOR specifics
-##
-
-FIND_PACKAGE(SalomePython REQUIRED)
-FIND_PACKAGE(SalomeOmniORB REQUIRED)
-FIND_PACKAGE(SalomeOmniORBPy REQUIRED)
 
 # Detection summary:
 SALOME_PACKAGE_REPORT_AND_CHECK()
