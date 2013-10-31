@@ -40,6 +40,9 @@ SET_AND_CHECK(PYCALCULATOR_INCLUDE_DIRS "${PYCALCULATOR_ROOT_DIR_EXP}/@SALOME_IN
 SET(PYCALCULATOR_INCLUDE_DIRS "${PYCALCULATOR_INCLUDE_DIRS};@_SalomePYCALCULATOR_EXTRA_HEADERS@")
 SET(PYCALCULATOR_DEFINITIONS "@MED_DEFINITIONS@")
 
+# Package specific environment variables
+@_SalomePYCALCULATOR_EXTRA_ENV_FULL@
+
 # Load the dependencies for the libraries of @PROJECT_NAME@ 
 # (contains definitions for IMPORTED targets). This is only 
 # imported if we are not built as a subproject (in this case targets are already there)
