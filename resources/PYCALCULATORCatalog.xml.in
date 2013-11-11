@@ -47,6 +47,30 @@
                 <component-interface-comment>No comment</component-interface-comment>
                 <!-- Service list -->
 		<component-service-list>
+		    <component-service>
+                        <!-- service-identification -->
+                        <service-name>Clone</service-name>
+                        <service-author>LD</service-author>
+                        <service-version>1.0</service-version>
+                        <service-comment>Clone field</service-comment>
+                        <service-by-default>1</service-by-default>
+                        <!-- service-connexion -->
+                        <inParameter-list>
+                            <inParameter>
+                                <inParameter-name>field</inParameter-name>
+                                <inParameter-type>SALOME_MED/MEDCouplingFieldDoubleCorbaInterface</inParameter-type>
+                                <inParameter-comment>a field of double</inParameter-comment>
+                            </inParameter>
+                        </inParameter-list>
+                        <outParameter-list>
+                            <outParameter>
+                                <outParameter-name>result</outParameter-name>
+                                <outParameter-type>SALOME_MED/MEDCouplingFieldDoubleCorbaInterface</outParameter-type>
+                                <outParameter-comment>result</outParameter-comment>
+                            </outParameter>
+                        </outParameter-list>
+                        <DataStream-list></DataStream-list>
+                    </component-service>
                     <component-service>
                         <!-- service-identification -->
                         <service-name>Add</service-name>
@@ -58,19 +82,19 @@
                         <inParameter-list>
                             <inParameter>
                                 <inParameter-name>field1</inParameter-name>
-                                <inParameter-type>SALOME_MED/FIELDDOUBLE</inParameter-type>
+                                <inParameter-type>SALOME_MED/MEDCouplingFieldDoubleCorbaInterface</inParameter-type>
                                 <inParameter-comment>first field of double</inParameter-comment>
                             </inParameter>
                             <inParameter>
                                 <inParameter-name>field2</inParameter-name>
-                                <inParameter-type>SALOME_MED/FIELDDOUBLE</inParameter-type>
+                                <inParameter-type>SALOME_MED/MEDCouplingFieldDoubleCorbaInterface</inParameter-type>
                                 <inParameter-comment>second field of double</inParameter-comment>
                             </inParameter>
                         </inParameter-list>
                         <outParameter-list>
                             <outParameter>
                                 <outParameter-name>result</outParameter-name>
-                                <outParameter-type>SALOME_MED/FIELDDOUBLE</outParameter-type>
+                                <outParameter-type>SALOME_MED/MEDCouplingFieldDoubleCorbaInterface</outParameter-type>
                                 <outParameter-comment>result</outParameter-comment>
                             </outParameter>
                         </outParameter-list>
@@ -87,19 +111,19 @@
                         <inParameter-list>
                             <inParameter>
                                 <inParameter-name>field1</inParameter-name>
-                                <inParameter-type>SALOME_MED/FIELDDOUBLE</inParameter-type>
-                                <inParameter-comment>initial field of double</inParameter-comment>
+                                <inParameter-type>SALOME_MED/MEDCouplingFieldDoubleCorbaInterface</inParameter-type>
+                                <inParameter-comment>first field of double</inParameter-comment>
                             </inParameter>
                             <inParameter>
-                                <inParameter-name>x1</inParameter-name>
-                                <inParameter-type>double</inParameter-type>
-                                <inParameter-comment>multiplicator</inParameter-comment>
+                                <inParameter-name>field2</inParameter-name>
+                                <inParameter-type>SALOME_MED/MEDCouplingFieldDoubleCorbaInterface</inParameter-type>
+                                <inParameter-comment>second field of double</inParameter-comment>
                             </inParameter>
                         </inParameter-list>
                         <outParameter-list>
                             <outParameter>
                                 <outParameter-name>result</outParameter-name>
-                                <outParameter-type>SALOME_MED/FIELDDOUBLE</outParameter-type>
+                                <outParameter-type>SALOME_MED/MEDCouplingFieldDoubleCorbaInterface</outParameter-type>
                                 <outParameter-comment>result</outParameter-comment>
                             </outParameter>
                         </outParameter-list>
@@ -107,54 +131,60 @@
                     </component-service>
                     <component-service>
                         <!-- service-identification -->
-                        <service-name>Constant</service-name>
+                        <service-name>AddConstant</service-name>
                         <service-author>LD</service-author>
                         <service-version>1.0</service-version>
-                        <service-comment>Build a constant field of doubles</service-comment>
+                        <service-comment>Add a constant to a field of doubles</service-comment>
                         <service-by-default>0</service-by-default>
                         <!-- service-connexion -->
                         <inParameter-list>
                             <inParameter>
-                                <inParameter-name>field1</inParameter-name>
-                                <inParameter-type>SALOME_MED/FIELDDOUBLE</inParameter-type>
+                                <inParameter-name>field</inParameter-name>
+                                <inParameter-type>SALOME_MED/MEDCouplingFieldDoubleCorbaInterface</inParameter-type>
                                 <inParameter-comment>allows to build the support</inParameter-comment>
                             </inParameter>
                             <inParameter>
-                                <inParameter-name>x1</inParameter-name>
+                                <inParameter-name>val</inParameter-name>
                                 <inParameter-type>double</inParameter-type>
-                                <inParameter-comment>the constant</inParameter-comment>
+                                <inParameter-comment>a constant</inParameter-comment>
                             </inParameter>
                         </inParameter-list>
                         <outParameter-list>
                             <outParameter>
                                 <outParameter-name>result</outParameter-name>
-                                <outParameter-type>SALOME_MED/FIELDDOUBLE</outParameter-type>
-                                <outParameter-comment>result based on first field support</outParameter-comment>
+                                <outParameter-type>SALOME_MED/MEDCouplingFieldDoubleCorbaInterface</outParameter-type>
+                                <outParameter-comment>result</outParameter-comment>
                             </outParameter>
                         </outParameter-list>
                         <DataStream-list></DataStream-list>
                     </component-service>
                     <component-service>
                         <!-- service-identification -->
-                        <service-name>writeMEDfile</service-name>
+                        <service-name>MulConstant</service-name>
                         <service-author>LD</service-author>
                         <service-version>1.0</service-version>
-                        <service-comment>write a field in a Med file</service-comment>
+                        <service-comment>multiply a field to a constant</service-comment>
                         <service-by-default>0</service-by-default>
                         <!-- service-connexion -->
                         <inParameter-list>
                             <inParameter>
-                                <inParameter-name>field1</inParameter-name>
-                                <inParameter-type>SALOME_MED/FIELDDOUBLE</inParameter-type>
-                                <inParameter-comment>transient Med field</inParameter-comment>
+                                <inParameter-name>field</inParameter-name>
+                                <inParameter-type>SALOME_MED/MEDCouplingFieldDoubleCorbaInterface</inParameter-type>
+                                <inParameter-comment>a field of double</inParameter-comment>
                             </inParameter>
                             <inParameter>
-                                <inParameter-name>filename</inParameter-name>
-                                <inParameter-type>string</inParameter-type>
-                                <inParameter-comment>Med filename</inParameter-comment>
+                                <inParameter-name>val</inParameter-name>
+                                <inParameter-type>double</inParameter-type>
+                                <inParameter-comment>a constant</inParameter-comment>
                             </inParameter>
                         </inParameter-list>
-                        <outParameter-list></outParameter-list>
+			<outParameter-list>
+                            <outParameter>
+                                <outParameter-name>result</outParameter-name>
+                                <outParameter-type>SALOME_MED/MEDCouplingFieldDoubleCorbaInterface</outParameter-type>
+                                <outParameter-comment>result</outParameter-comment>
+                            </outParameter>
+                        </outParameter-list>
                         <DataStream-list></DataStream-list>
                     </component-service>
                 </component-service-list>
