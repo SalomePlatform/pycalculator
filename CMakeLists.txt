@@ -57,12 +57,14 @@ SET(BUILD_SHARED_LIBS TRUE)
 # Local macros:
 LIST(APPEND CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}/adm_local/cmake_files")
 
-# User options
-# (some options have already been defined in KERNEL) 
+# User options 
 # ============
-# OPTION(SALOME_BUILD_TESTS "Build SALOME tests" ON) For use in the future
+OPTION(SALOME_BUILD_TESTS "Build SALOME tests" ON)
 OPTION(SALOME_BUILD_DOC "Generate SALOME PYCALCULATOR documentation" ON)
   
+IF(SALOME_BUILD_TESTS)
+  ENABLE_TESTING()
+ENDIF()
 IF(SALOME_BUILD_DOC)
   FIND_PACKAGE(SalomeDoxygen)
   SALOME_LOG_OPTIONAL_PACKAGE(Doxygen SALOME_BUILD_DOC)
