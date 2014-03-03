@@ -41,13 +41,10 @@ IF(EXISTS ${KERNEL_ROOT_DIR})
   LIST(APPEND CMAKE_MODULE_PATH "${KERNEL_ROOT_DIR}/salome_adm/cmake_files")
   INCLUDE(SalomeMacros)
   FIND_PACKAGE(SalomeKERNEL REQUIRED)
+  KERNEL_WITH_CORBA() # check whether KERNEL builded with CORBA
 ELSE(EXISTS ${KERNEL_ROOT_DIR})
   MESSAGE(FATAL_ERROR "We absolutely need a Salome KERNEL, please define KERNEL_ROOT_DIR")
 ENDIF(EXISTS ${KERNEL_ROOT_DIR})
-
-IF(SALOME_LIGHT_ONLY)
-  MESSAGE(FATAL_ERROR "PYCALCULATOR module can't be built in Light mode (without CORBA)")
-ENDIF()
 
 # Platform setup
 # ==============
@@ -84,6 +81,10 @@ SET(MED_ROOT_DIR $ENV{MED_ROOT_DIR} CACHE PATH "Path to the Salome MED")
 IF(EXISTS ${MED_ROOT_DIR})
   LIST(APPEND CMAKE_MODULE_PATH "${MED_ROOT_DIR}/adm_local/cmake_files")
   FIND_PACKAGE(SalomeMED REQUIRED)
+  IF(SALOME_MED_STANDALONE)
+    MESSAGE(FATAL_ERROR "We absolutely need a Salome MED with KERNEL, 
+                         please set SALOME_MED_STANDALONE=OFF when building MED module.")
+  ENDIF()
 ELSE(EXISTS ${MED_ROOT_DIR})
   MESSAGE(FATAL_ERROR "We absolutely need a Salome MED, please define MED_ROOT_DIR")
 ENDIF(EXISTS ${MED_ROOT_DIR})
