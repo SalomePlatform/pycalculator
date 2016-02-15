@@ -35,10 +35,11 @@ import PYCALCULATOR_ORB
 from MEDCouplingCorba import *
 from MEDCoupling import *
 from MEDLoader import *
+from MEDCouplingClient import *
 
 pc = salome.lcc.FindOrLoadComponent('FactoryServer','PYCALCULATOR')
 
-medFile   = os.path.join(os.getenv("MED_ROOT_DIR"), "share/salome/resources/med/pointe.med")
+medFile   = os.path.join(os.getenv("DATA_DIR"), "MedFiles", "pointe.med")
 meshName  = "maa1"
 fieldName = "fieldcelldoublevector"
 print medFile, meshName, fieldName
@@ -51,3 +52,17 @@ f1    = pc.Add(forig, fcopy)
 f2    = pc.Mul(forig, fcopy)
 f3    = pc.AddConstant(forig, 3.5)
 f4    = pc.MulConstant(forig, 3.5)
+
+clt_forig = MEDCouplingFieldDoubleClient.New(forig)
+clt_fcopy = MEDCouplingFieldDoubleClient.New(fcopy)
+clt_f1 = MEDCouplingFieldDoubleClient.New(f1)
+clt_f2 = MEDCouplingFieldDoubleClient.New(f2)
+clt_f3 = MEDCouplingFieldDoubleClient.New(f3)
+clt_f4 = MEDCouplingFieldDoubleClient.New(f4)
+
+print "clt_forig:", clt_forig
+print "clt_fcopy:", clt_fcopy
+print "clt_f1:", clt_f1
+print "clt_f2:", clt_f2
+print "clt_f3:", clt_f3
+print "clt_f4:", clt_f4
