@@ -38,7 +38,7 @@
             <component-version>@SALOMEPYCALCULATOR_VERSION@</component-version>
             <component-comment>Test component (Arithmetic operations with MED_Field)</component-comment>
             <component-multistudy>0</component-multistudy>
-            <component-icone>PYCALCULATOR.png</component-icone>
+            <component-icone></component-icone>
             <constraint>hostname = localhost</constraint>
             <component-impltype>0</component-impltype>
 	    <!-- Component interfaces -->

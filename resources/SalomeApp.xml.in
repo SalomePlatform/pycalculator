@@ -25,7 +25,6 @@
   <section name="PYCALCULATOR">
     <!-- Major module parameters -->
     <parameter name="name" value="PyCalculator"/>
-    <parameter name="icon" value="PYCALCULATOR.png"/>
     <parameter name="version" value="@SALOMEPYCALCULATOR_VERSION@"/>
   </section>
   <section name="resources">
