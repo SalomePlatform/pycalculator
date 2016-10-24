@@ -57,7 +57,7 @@ class PYCALCULATOR(PYCALCULATOR_ORB__POA.PYCALCULATOR_Gen, SALOME_ComponentPy.SA
             containerName,    # SALOME container name
             instanceName,     # component instance name
             interfaceName,    # component interface name
-            0)                # notification flag (for notification server)
+            False)            # notification flag (for notification server)
 
 	self._naming_service = SALOME_ComponentPy.SALOME_NamingServicePy_i(self._orb)
 
