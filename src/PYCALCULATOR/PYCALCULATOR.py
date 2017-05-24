@@ -47,7 +47,7 @@ class PYCALCULATOR(PYCALCULATOR_ORB__POA.PYCALCULATOR_Gen, SALOME_ComponentPy.SA
     def __init__(self, orb, poa, contID, containerName, instanceName,
                  interfaceName):
 
-        if verbose(): print "Begin of PYCALCULATOR::__init__"
+        if verbose(): print("Begin of PYCALCULATOR::__init__")
 
         SALOME_ComponentPy.SALOME_ComponentPy_i.__init__(
             self,
@@ -59,9 +59,9 @@ class PYCALCULATOR(PYCALCULATOR_ORB__POA.PYCALCULATOR_Gen, SALOME_ComponentPy.SA
             interfaceName,    # component interface name
             False)            # notification flag (for notification server)
 
-	self._naming_service = SALOME_ComponentPy.SALOME_NamingServicePy_i(self._orb)
+        self._naming_service = SALOME_ComponentPy.SALOME_NamingServicePy_i(self._orb)
 
-        if verbose(): print "End of PYCALCULATOR::__init__"
+        if verbose(): print("End of PYCALCULATOR::__init__")
 
         pass
 
@@ -75,8 +75,8 @@ class PYCALCULATOR(PYCALCULATOR_ORB__POA.PYCALCULATOR_Gen, SALOME_ComponentPy.SA
         self.beginService("PYCALCULATOR::Clone")
 
         if verbose(): 
-            print "Begin of PYCALCULATOR::Clone"
-            print "            field : ", field
+            print("Begin of PYCALCULATOR::Clone")
+            print("            field : ", field)
             pass
 
         frescorba = None
@@ -88,12 +88,12 @@ class PYCALCULATOR(PYCALCULATOR_ORB__POA.PYCALCULATOR_Gen, SALOME_ComponentPy.SA
             # create CORBA field
             frescorba = MEDCouplingFieldDoubleServant._this(f)
             
-        except Exception, e:
-            if verbose(): print e
+        except Exception as e:
+            if verbose(): print(e)
             pass
         
         if verbose(): 
-            print "End of PYCALCULATOR::Clone"
+            print("End of PYCALCULATOR::Clone")
             pass
         
         self.endService("PYCALCULATOR::Clone")
@@ -105,9 +105,9 @@ class PYCALCULATOR(PYCALCULATOR_ORB__POA.PYCALCULATOR_Gen, SALOME_ComponentPy.SA
         self.beginService("PYCALCULATOR::Add")
 
         if verbose(): 
-            print "Begin of PYCALCULATOR::Add"
-            print "            field 1 : ", field1
-            print "            field 2 : ", field2
+            print("Begin of PYCALCULATOR::Add")
+            print("            field 1 : ", field1)
+            print("            field 2 : ", field2)
             pass
 
         frescorba = None
@@ -124,12 +124,12 @@ class PYCALCULATOR(PYCALCULATOR_ORB__POA.PYCALCULATOR_Gen, SALOME_ComponentPy.SA
             # create CORBA field
             frescorba = MEDCouplingFieldDoubleServant._this(fres)
             
-        except Exception, e:
-            if verbose(): print e
+        except Exception as e:
+            if verbose(): print(e)
             pass
         
         if verbose(): 
-            print "End of PYCALCULATOR::Add"
+            print("End of PYCALCULATOR::Add")
             pass
         
         self.endService("PYCALCULATOR::Add")
@@ -141,9 +141,9 @@ class PYCALCULATOR(PYCALCULATOR_ORB__POA.PYCALCULATOR_Gen, SALOME_ComponentPy.SA
         self.beginService("PYCALCULATOR::Mul")
 
         if verbose(): 
-            print "Begin of PYCALCULATOR::Mul"
-            print "            field 1 : ", field1
-            print "            field 2 : ", field2
+            print("Begin of PYCALCULATOR::Mul")
+            print("            field 1 : ", field1)
+            print("            field 2 : ", field2)
             pass
 
         frescorba = None
@@ -160,12 +160,12 @@ class PYCALCULATOR(PYCALCULATOR_ORB__POA.PYCALCULATOR_Gen, SALOME_ComponentPy.SA
             # create CORBA field
             frescorba = MEDCouplingFieldDoubleServant._this(fres)
             
-        except Exception, e:
-            if verbose(): print e
+        except Exception as e:
+            if verbose(): print(e)
             pass
         
         if verbose(): 
-            print "End of PYCALCULATOR::Mul"
+            print("End of PYCALCULATOR::Mul")
             pass
         
         self.endService("PYCALCULATOR::Mul")
@@ -177,9 +177,9 @@ class PYCALCULATOR(PYCALCULATOR_ORB__POA.PYCALCULATOR_Gen, SALOME_ComponentPy.SA
         self.beginService("PYCALCULATOR::AddConstant")
 
         if verbose(): 
-            print "Begin of PYCALCULATOR::AddConstant"
-            print "            field    : ", field
-            print "            constant : ", val
+            print("Begin of PYCALCULATOR::AddConstant")
+            print("            field    : ", field)
+            print("            constant : ", val)
             pass
 
         frescorba = None
@@ -194,12 +194,12 @@ class PYCALCULATOR(PYCALCULATOR_ORB__POA.PYCALCULATOR_Gen, SALOME_ComponentPy.SA
             # create CORBA field
             frescorba = MEDCouplingFieldDoubleServant._this(fres)
             
-        except Exception, e:
-            if verbose(): print e
+        except Exception as e:
+            if verbose(): print(e)
             pass
         
         if verbose(): 
-            print "End of PYCALCULATOR::AddConstant"
+            print("End of PYCALCULATOR::AddConstant")
             pass
         
         self.endService("PYCALCULATOR::AddConstant")
@@ -211,9 +211,9 @@ class PYCALCULATOR(PYCALCULATOR_ORB__POA.PYCALCULATOR_Gen, SALOME_ComponentPy.SA
         self.beginService("PYCALCULATOR::MulConstant")
 
         if verbose(): 
-            print "Begin of PYCALCULATOR::MulConstant"
-            print "            field    : ", field
-            print "            constant : ", val
+            print("Begin of PYCALCULATOR::MulConstant")
+            print("            field    : ", field)
+            print("            constant : ", val)
             pass
 
         frescorba = None
@@ -228,12 +228,12 @@ class PYCALCULATOR(PYCALCULATOR_ORB__POA.PYCALCULATOR_Gen, SALOME_ComponentPy.SA
             # create CORBA field
             frescorba = MEDCouplingFieldDoubleServant._this(fres)
             
-        except Exception, e:
-            if verbose(): print e
+        except Exception as e:
+            if verbose(): print(e)
             pass
         
         if verbose(): 
-            print "End of PYCALCULATOR::MulConstant"
+            print("End of PYCALCULATOR::MulConstant")
             pass
         
         self.endService("PYCALCULATOR::MulConstant")
