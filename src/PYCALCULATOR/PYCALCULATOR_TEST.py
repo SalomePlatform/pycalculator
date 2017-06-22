@@ -42,7 +42,7 @@ pc = salome.lcc.FindOrLoadComponent('FactoryServer','PYCALCULATOR')
 medFile   = os.path.join(os.getenv("DATA_DIR"), "MedFiles", "pointe.med")
 meshName  = "maa1"
 fieldName = "fieldcelldoublevector"
-print medFile, meshName, fieldName
+print(medFile, meshName, fieldName)
 
 f = ReadFieldCell(medFile, meshName, 0, fieldName, -1, -1)
 forig = MEDCouplingFieldDoubleServant._this(f)
@@ -60,9 +60,9 @@ clt_f2 = MEDCouplingFieldDoubleClient.New(f2)
 clt_f3 = MEDCouplingFieldDoubleClient.New(f3)
 clt_f4 = MEDCouplingFieldDoubleClient.New(f4)
 
-print "clt_forig:", clt_forig
-print "clt_fcopy:", clt_fcopy
-print "clt_f1:", clt_f1
-print "clt_f2:", clt_f2
-print "clt_f3:", clt_f3
-print "clt_f4:", clt_f4
+print("clt_forig:", clt_forig)
+print("clt_fcopy:", clt_fcopy)
+print("clt_f1:", clt_f1)
+print("clt_f2:", clt_f2)
+print("clt_f3:", clt_f3)
+print("clt_f4:", clt_f4)
