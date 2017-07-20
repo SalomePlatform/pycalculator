@@ -26,6 +26,7 @@
     <!-- Major module parameters -->
     <parameter name="name" value="PyCalculator"/>
     <parameter name="version" value="@SALOMEPYCALCULATOR_VERSION@"/>
+    <parameter name="gui" value="no"/>
   </section>
   <section name="resources">
     <!-- Module resources -->
