@@ -3,7 +3,7 @@ About SALOME PYCALCULATOR sample
 ********************************
 
 PYCALCULATOR module implements a sample of Python-based SALOME component.
-It shows an example of a module that interfaces with SALOME MED.
+It shows an example of a module that interfaces with SALOME FIELDS.
 
 For more information please visit the SALOME platform web site:
 
@@ -42,7 +42,7 @@ site:
 
   <http://www.salome-platform.org/downloads/license/>
 
-Note: SALOME PYCALCULATOR needs SALOME KERNEL and SALOME MED modules as
+Note: SALOME PYCALCULATOR needs SALOME KERNEL and SALOME FIELDS modules as
 pre-requisites.
 
 ------------------

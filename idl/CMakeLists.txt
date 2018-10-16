@@ -23,7 +23,7 @@ INCLUDE_DIRECTORIES(
   ${OMNIORB_INCLUDE_DIR}
   ${CMAKE_CURRENT_BINARY_DIR}
   ${KERNEL_INCLUDE_DIRS}
-  ${MED_INCLUDE_DIRS}
+  ${FIELDS_INCLUDE_DIRS}
 )
 
 SET(SalomeIDLPYCALCULATOR_IDLSOURCES
@@ -32,12 +32,12 @@ SET(SalomeIDLPYCALCULATOR_IDLSOURCES
 
 SET(_idl_include_dirs
   ${KERNEL_ROOT_DIR}/idl/salome
-  ${MED_ROOT_DIR}/idl/salome
+  ${FIELDS_ROOT_DIR}/idl/salome
 )
 
 SET(_idl_link_flags
   ${KERNEL_SalomeIDLKernel}
-  ${MED_SalomeIDLMED}
+  ${FIELDS_SalomeIDLMED}
 )
 
 OMNIORB_ADD_MODULE(SalomeIDLPYCALCULATOR "${SalomeIDLPYCALCULATOR_IDLSOURCES}" "${_idl_include_dirs}" "${_idl_link_flags}")
