@@ -29,8 +29,8 @@
 # This is necessary to ensure that different modules will have the same definition
 # of dynamic types and C++ RTTI will work between them
 #
-import DLFCN, sys
-sys.setdlopenflags(DLFCN.RTLD_NOW | DLFCN.RTLD_GLOBAL)
+import os, sys
+sys.setdlopenflags(os.RTLD_NOW | os.RTLD_GLOBAL)
 
 import PYCALCULATOR_ORB__POA
 import SALOME_ComponentPy

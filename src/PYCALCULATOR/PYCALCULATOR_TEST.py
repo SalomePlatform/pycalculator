@@ -32,8 +32,8 @@ salome.salome_init()
 
 import PYCALCULATOR_ORB
 
+from medcoupling import *
 from MEDCouplingCorba import *
-from MEDCoupling import *
 from MEDLoader import *
 from MEDCouplingClient import *
 
