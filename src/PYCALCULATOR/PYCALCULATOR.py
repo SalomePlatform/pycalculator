@@ -34,6 +34,7 @@ sys.setdlopenflags(os.RTLD_NOW | os.RTLD_GLOBAL)
 
 import PYCALCULATOR_ORB__POA
 import SALOME_ComponentPy
+import SALOME_Embedded_NamingService_ClientPy
 
 import SALOME_MED
 from MEDCouplingClient import *
@@ -58,8 +59,13 @@ class PYCALCULATOR(PYCALCULATOR_ORB__POA.PYCALCULATOR_Gen, SALOME_ComponentPy.SA
             instanceName,     # component instance name
             interfaceName,    # component interface name
             False)            # notification flag (for notification server)
-
-        self._naming_service = SALOME_ComponentPy.SALOME_NamingServicePy_i(self._orb)
+        
+        emb_ns = self._contId.get_embedded_NS_if_ssl()
+        import CORBA
+        if CORBA.is_nil(emb_ns):
+            self._naming_service = SALOME_ComponentPy.SALOME_NamingServicePy_i( self._orb )
+        else:
+            self._naming_service = SALOME_Embedded_NamingService_ClientPy.SALOME_Embedded_NamingService_ClientPy(emb_ns)
 
         if verbose(): print("End of PYCALCULATOR::__init__")
 
